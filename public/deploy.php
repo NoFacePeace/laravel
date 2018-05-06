@@ -1,3 +1,2 @@
 <?php
-echo shell_exec('git push');
-echo "hello world";
+shell_exec('git pull --rebase');
