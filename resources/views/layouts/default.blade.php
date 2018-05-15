@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', 'Sample App') - Larvel 入门教程</title>
+<html>
+  <head>
+    <title>@yield('title', 'Sample App') - Laravel 入门教程</title>
     <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
+  </head>
+  <body>
     @include('layouts._header')
+
     <div class="container">
-        <div class="col-md-offset-1 col-md-10">
-            @yield('content')
-            @include('layouts._footer')
-        </div>
+      <div class="col-md-offset-1 col-md-10">
+        @include('shared._messages')
+        @yield('content')
+        @include('layouts._footer')
+      </div>
     </div>
-</body>
+  </body>
 </html>
