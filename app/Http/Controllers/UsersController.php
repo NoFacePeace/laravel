@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Models\User;
 
+use Auth;
+
 class UsersController extends Controller
 {
     public function create()
@@ -32,6 +34,8 @@ class UsersController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
+
+        Auth::login($user);
         session()->flash('success', 'Welcome,you will begin a hiking');
         return redirect()->route('users.show',[$user]);
     }
